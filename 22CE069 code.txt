@@ -1,0 +1,53 @@
+/*This program is prepared by 22CE069.*/
+#include<stdio.h>
+void main()
+{
+    int i;
+    char a[10];
+    for(i=1;i>=0;i++)
+    {
+        int l=0,u=0,d=0,s=0;
+        printf("Enter your password:\n");
+        scanf("%s",&a);
+        if(strlen(a)>=8)
+        {
+            for(i=0;i<strlen(a)-1;i++)
+            {
+                if(islower(a[i]))
+                {
+                    l=1;
+                }
+                else if(isupper(a[i]))
+                {
+                    u=1;
+                }
+                else if(isdigit(a[i]))
+                {
+                    d=1;
+                }
+                else if(ispunct(a[i]))
+                {
+                    s=1;
+                }
+            }
+            if(l==1 && u==1 && d==1 && s==1)
+            {
+                printf("Your password is STRONG.\n");
+                break;
+            }
+            else if(l==0 || u==0 || d==0 || s==0)
+            {
+                printf("Your password is WEAK.\n");
+            }
+            else
+            {
+                printf("Your password is AVERAGE.\n");
+            }
+        }
+        else
+        {
+            printf("Length of the entered password should be of 8.\n");
+        }
+    }
+    printf("This program is prepared by 22CE069.");
+}
